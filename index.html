@@ -1,0 +1,2629 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sanafur HU | دليلك لأول فصل جامعي</title>
+<link rel="stylesheet" href="onboarding.css?v=20260831-2">
+<link rel="stylesheet" href="quick-actions.css?v=20260925-1">
+<link rel="stylesheet" href="college-hub.css?v=20260925-1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<style>
+
+:root{
+    --cream:#F6F1E8;
+    --black:#17131F;
+
+    --purple:#6D4AFF;
+    --purple2:#8D6BFF;
+    --purpleLight:#CEC2FF;
+
+    --yellow:#FFD252;
+    --pink:#F06BD7;
+    --cyan:#42D5C7;
+
+    --white:#FFFFFF;
+    --muted:#625D6D;
+
+    --border:3px solid var(--black);
+
+    --shadow-big:9px 9px 0 var(--black);
+    --shadow-small:5px 5px 0 var(--black);
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:var(--cream);
+    color:var(--black);
+    font-family:"Cairo",sans-serif;
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button{
+    font:inherit;
+}
+
+.container{
+    width:min(1180px,calc(100% - 40px));
+    margin:auto;
+    position:relative;
+    z-index:3;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar-wrap{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(246,241,232,.94);
+    backdrop-filter:blur(14px);
+
+    border-bottom:2px solid rgba(23,19,31,.10);
+}
+
+.navbar{
+    min-height:82px;
+
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+
+    align-items:center;
+    gap:30px;
+}
+
+.brand{
+    direction:ltr;
+
+    display:flex;
+    align-items:center;
+    gap:13px;
+
+    justify-self:start;
+}
+
+.logo-box{
+    width:50px;
+    height:50px;
+
+    background:#000;
+
+    border:var(--border);
+    border-radius:14px;
+
+    box-shadow:5px 5px 0 var(--purple);
+
+    overflow:hidden;
+}
+
+.logo-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.brand-name{
+    font-family:"Manrope",sans-serif;
+    font-size:24px;
+    font-weight:800;
+
+    letter-spacing:-1px;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    align-items:center;
+
+    font-size:14px;
+    font-weight:700;
+}
+
+.nav-links a{
+    position:relative;
+    padding:8px 0;
+}
+
+.nav-links a:after{
+    content:"";
+
+    position:absolute;
+
+    right:0;
+    left:0;
+    bottom:1px;
+
+    height:3px;
+
+    background:var(--purple);
+
+    transform:scaleX(0);
+
+    transition:.2s;
+}
+
+.nav-links a:hover:after{
+    transform:scaleX(1);
+}
+
+
+/* =========================
+   BUTTON SYSTEM
+========================= */
+
+.btn{
+    min-height:50px;
+
+    padding:10px 22px;
+
+    border:var(--border);
+    border-radius:999px;
+
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease;
+}
+
+.btn:hover{
+    transform:translate(3px,3px);
+    box-shadow:3px 3px 0 var(--black)!important;
+}
+
+.nav-btn{
+    justify-self:end;
+
+    background:var(--purple);
+    color:white;
+
+    box-shadow:var(--shadow-small);
+}
+
+.primary-btn{
+    background:var(--purple);
+    color:#fff;
+
+    box-shadow:var(--shadow-big);
+}
+
+.secondary-btn{
+    background:white;
+
+    box-shadow:var(--shadow-big);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+
+    min-height:720px;
+
+    display:flex;
+    align-items:center;
+
+    padding:80px 0 100px;
+
+    isolation:isolate;
+}
+
+.hero-grid{
+    display:grid;
+
+    grid-template-columns:1.05fr .95fr;
+
+    gap:70px;
+
+    align-items:center;
+}
+
+.hero-copy{
+    position:relative;
+    z-index:5;
+}
+
+
+/* small pill */
+
+.eyebrow{
+    width:max-content;
+
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    background:var(--purpleLight);
+
+    border:var(--border);
+    border-radius:999px;
+
+    box-shadow:var(--shadow-small);
+
+    padding:8px 15px;
+
+    font-size:13px;
+    font-weight:900;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+
+    border:2px solid var(--black);
+    border-radius:50%;
+
+    background:var(--yellow);
+}
+
+
+/* hero heading */
+
+.hero h1{
+    margin:29px 0 22px;
+
+    font-size:clamp(52px,5.3vw,78px);
+
+    line-height:.98;
+
+    letter-spacing:-3px;
+
+    font-weight:900;
+}
+
+.marker{
+    position:relative;
+
+    display:inline-block;
+
+    z-index:0;
+}
+
+.marker:before{
+    content:"";
+
+    position:absolute;
+
+    right:-4%;
+    left:-4%;
+
+    height:.36em;
+
+    bottom:.04em;
+
+    background:var(--yellow);
+
+    border:2px solid var(--black);
+
+    transform:rotate(-1deg);
+
+    z-index:-1;
+}
+
+.marker.purple:before{
+    background:var(--purple2);
+    transform:rotate(1deg);
+}
+
+.hero-description{
+    max-width:660px;
+
+    font-size:18px;
+    line-height:1.9;
+
+    color:var(--muted);
+
+    font-weight:600;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+
+    margin-top:30px;
+}
+
+
+/* trust */
+
+.trust{
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    margin-top:36px;
+}
+
+.avatars{
+    direction:ltr;
+    display:flex;
+}
+
+.avatar{
+    width:43px;
+    height:43px;
+
+    margin-left:-8px;
+
+    border:3px solid var(--black);
+    border-radius:50%;
+
+    display:grid;
+    place-items:center;
+
+    font-family:"Manrope";
+    font-size:12px;
+    font-weight:900;
+}
+
+.avatar:nth-child(1){
+    background:var(--purple);
+    color:white;
+}
+
+.avatar:nth-child(2){
+    background:var(--yellow);
+}
+
+.avatar:nth-child(3){
+    background:var(--cyan);
+}
+
+.avatar:nth-child(4){
+    background:var(--pink);
+}
+
+.trust-text{
+    font-size:13px;
+    font-weight:800;
+    line-height:1.6;
+}
+
+.trust-text span{
+    color:var(--muted);
+    font-weight:600;
+}
+
+
+/* =========================
+   DASHBOARD MOCKUP
+========================= */
+
+.dashboard-area{
+    position:relative;
+    z-index:5;
+
+    perspective:1000px;
+}
+
+.dashboard{
+    background:white;
+
+    border:var(--border);
+
+    border-radius:27px;
+
+    box-shadow:12px 12px 0 var(--black);
+
+    overflow:hidden;
+
+    transform:rotate(-2deg);
+
+    transition:.3s;
+}
+
+.dashboard:hover{
+    transform:rotate(0) translateY(-5px);
+}
+
+.browser-bar{
+    min-height:66px;
+
+    border-bottom:var(--border);
+
+    background:#FBF8F3;
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 18px;
+
+    direction:ltr;
+}
+
+.browser-dots{
+    display:flex;
+    gap:7px;
+}
+
+.browser-dot{
+    width:13px;
+    height:13px;
+
+    border:2px solid var(--black);
+    border-radius:50%;
+}
+
+.browser-dot:nth-child(1){
+    background:var(--pink);
+}
+
+.browser-dot:nth-child(2){
+    background:var(--yellow);
+}
+
+.browser-dot:nth-child(3){
+    background:var(--cyan);
+}
+
+.browser-title{
+    flex:1;
+
+    background:white;
+
+    border:2px solid var(--black);
+    border-radius:11px;
+
+    padding:8px 12px;
+
+    text-align:center;
+
+    direction:rtl;
+
+    font-size:13px;
+    font-weight:800;
+}
+
+.dashboard-content{
+    padding:25px;
+}
+
+.dashboard-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+
+    margin-bottom:17px;
+}
+
+.dashboard-header h3{
+    font-size:25px;
+
+    line-height:1.3;
+
+    margin:0;
+
+    font-weight:900;
+}
+
+.ready-pill{
+    padding:7px 11px;
+
+    border:2px solid var(--black);
+    border-radius:999px;
+
+    background:var(--purpleLight);
+
+    white-space:nowrap;
+
+    font-size:12px;
+    font-weight:900;
+}
+
+
+/* progress */
+
+.progress-card{
+    padding:16px;
+
+    border:2px solid var(--black);
+    border-radius:18px;
+
+    background:#FBF8F3;
+
+    margin-bottom:16px;
+}
+
+.progress-head{
+    display:flex;
+    justify-content:space-between;
+
+    margin-bottom:12px;
+
+    font-size:13px;
+    font-weight:800;
+}
+
+.progress{
+    height:19px;
+
+    border:2px solid var(--black);
+    border-radius:999px;
+
+    background:white;
+
+    overflow:hidden;
+}
+
+.progress span{
+    width:76%;
+    height:100%;
+
+    display:block;
+
+    background:var(--purple);
+
+    border-left:2px solid var(--black);
+}
+
+
+/* small dashboard cards */
+
+.quick-cards{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:10px;
+
+    margin-bottom:17px;
+}
+
+.quick-card{
+    min-height:88px;
+
+    padding:12px 10px;
+
+    border:2px solid var(--black);
+    border-radius:15px;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    font-size:12px;
+    font-weight:900;
+}
+
+.quick-card strong{
+    font-family:"Manrope";
+    font-size:22px;
+}
+
+.quick-card:nth-child(1){
+    background:#EEE9FF;
+}
+
+.quick-card:nth-child(2){
+    background:#FFF0B5;
+}
+
+.quick-card:nth-child(3){
+    background:#DCF9F5;
+}
+
+
+/* checklist */
+
+.check-list{
+    display:grid;
+    gap:10px;
+}
+
+.check-item{
+    padding:11px 12px;
+
+    background:white;
+
+    border:2px solid var(--black);
+    border-radius:14px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:13px;
+    font-weight:800;
+}
+
+.checkbox{
+    width:25px;
+    height:25px;
+
+    border:2px solid var(--black);
+    border-radius:7px;
+
+    flex-shrink:0;
+
+    display:grid;
+    place-items:center;
+}
+
+.checkbox.checked{
+    background:var(--purple);
+    color:white;
+}
+
+.checkbox.checked:after{
+    content:"✓";
+    font-weight:900;
+}
+
+
+/* =========================
+   MEMPHIS DECORATIONS
+========================= */
+
+.shape{
+    position:absolute;
+
+    pointer-events:none;
+
+    z-index:1;
+}
+
+.triangle{
+    width:65px;
+
+    left:2%;
+    top:17%;
+
+    animation:float1 8s ease-in-out infinite;
+}
+
+.plus{
+    width:56px;
+
+    right:43%;
+    top:8%;
+
+    animation:rotateShape 19s linear infinite;
+}
+
+.zigzag{
+    width:95px;
+
+    left:42%;
+    bottom:13%;
+
+    animation:bob 6s ease-in-out infinite;
+}
+
+.arc{
+    width:85px;
+
+    right:2%;
+    bottom:8%;
+
+    animation:float2 9s ease-in-out infinite;
+}
+
+.dotted{
+    width:75px;
+
+    right:2%;
+    top:24%;
+
+    animation:rotateShape 25s linear infinite;
+}
+
+.squiggle{
+    width:100px;
+
+    right:42%;
+    bottom:17%;
+
+    animation:sway 7s ease-in-out infinite;
+}
+
+.half{
+    width:72px;
+
+    left:3%;
+    top:60%;
+
+    animation:bob 6s ease-in-out infinite;
+}
+
+.mini-circle{
+    position:absolute;
+
+    width:24px;
+    height:24px;
+
+    left:43%;
+    top:17%;
+
+    border:3px solid var(--black);
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    z-index:1;
+
+    animation:bob 5s ease-in-out infinite;
+}
+
+
+@keyframes float1{
+
+    0%,100%{
+        transform:translateY(0) rotate(-8deg);
+    }
+
+    50%{
+        transform:translateY(-18px) rotate(10deg);
+    }
+
+}
+
+@keyframes float2{
+
+    0%,100%{
+        transform:translate(0,0) rotate(5deg);
+    }
+
+    50%{
+        transform:translate(-8px,-16px) rotate(-7deg);
+    }
+
+}
+
+@keyframes rotateShape{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes bob{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-16px);
+    }
+
+}
+
+@keyframes sway{
+
+    0%,100%{
+        transform:rotate(-5deg);
+    }
+
+    50%{
+        transform:rotate(8deg);
+    }
+
+}
+
+
+/* =========================
+   BLACK STRIP
+========================= */
+
+.info-strip{
+    background:var(--black);
+    color:var(--cream);
+
+    padding:26px 0;
+}
+
+.info-strip-inner{
+    display:grid;
+
+    grid-template-columns:auto 1fr;
+
+    align-items:center;
+
+    gap:35px;
+}
+
+.strip-title{
+    color:var(--yellow);
+
+    font-size:13px;
+    font-weight:900;
+
+    white-space:nowrap;
+}
+
+.strip-items{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+
+    gap:15px;
+
+    text-align:center;
+
+    font-weight:800;
+}
+
+
+/* =========================
+   GENERIC SECTIONS
+========================= */
+
+.section{
+    padding:105px 0;
+}
+
+.section-header{
+    max-width:820px;
+
+    margin:0 auto 55px;
+
+    text-align:center;
+}
+
+.section-header .eyebrow{
+    margin:auto;
+}
+
+.section-header h2{
+    margin:27px 0 14px;
+
+    font-size:clamp(39px,4vw,58px);
+
+    line-height:1.1;
+
+    letter-spacing:-2px;
+
+    font-weight:900;
+}
+
+.section-header p{
+    margin:0 auto;
+
+    max-width:650px;
+
+    color:var(--muted);
+
+    font-weight:600;
+
+    line-height:1.9;
+}
+
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+}
+
+.feature{
+    min-height:320px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:white;
+
+    border:var(--border);
+    border-radius:23px;
+
+    box-shadow:var(--shadow-big);
+
+    padding:27px;
+
+    transition:.2s;
+}
+
+.feature:hover{
+    transform:translateY(-5px);
+}
+
+.icon{
+    width:67px;
+    height:67px;
+
+    margin-bottom:25px;
+
+    display:grid;
+    place-items:center;
+
+    border:var(--border);
+    border-radius:18px;
+
+    box-shadow:var(--shadow-small);
+
+    font-size:29px;
+    font-weight:900;
+}
+
+.feature:nth-child(1) .icon{
+    background:var(--purple);
+    color:white;
+}
+
+.feature:nth-child(2) .icon{
+    background:var(--yellow);
+}
+
+.feature:nth-child(3) .icon{
+    background:var(--cyan);
+}
+
+.feature h3{
+    margin:0 0 10px;
+
+    font-size:25px;
+
+    font-weight:900;
+}
+
+.feature p{
+    margin:0;
+
+    max-width:90%;
+
+    color:var(--muted);
+
+    line-height:1.85;
+
+    font-size:15px;
+    font-weight:600;
+}
+
+.corner-circle{
+    position:absolute;
+
+    width:130px;
+    height:130px;
+
+    left:-55px;
+    bottom:-55px;
+
+    border:3px solid var(--black);
+    border-radius:50%;
+
+    opacity:.18;
+}
+
+.feature:nth-child(1) .corner-circle{
+    background:var(--purple);
+}
+
+.feature:nth-child(2) .corner-circle{
+    background:var(--yellow);
+}
+
+.feature:nth-child(3) .corner-circle{
+    background:var(--cyan);
+}
+
+
+/* =========================
+   FIRST WEEK
+========================= */
+
+.steps{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+}
+
+.step{
+    min-height:235px;
+
+    padding:21px;
+
+    background:white;
+
+    border:var(--border);
+    border-radius:20px;
+
+    box-shadow:6px 6px 0 var(--black);
+}
+
+.step-number{
+    width:50px;
+    height:50px;
+
+    display:grid;
+    place-items:center;
+
+    margin-bottom:19px;
+
+    border:var(--border);
+    border-radius:14px;
+
+    background:var(--purpleLight);
+
+    font-family:"Manrope";
+    font-weight:900;
+}
+
+.step h3{
+    margin:0 0 8px;
+
+    font-size:20px;
+
+    font-weight:900;
+}
+
+.step p{
+    margin:0;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    font-weight:600;
+}
+
+
+/* =========================
+   JOIN CTA
+========================= */
+
+.join-box{
+    padding:55px;
+
+    background:var(--purple);
+
+    color:white;
+
+    border:var(--border);
+    border-radius:30px;
+
+    box-shadow:12px 12px 0 var(--black);
+
+    display:grid;
+
+    grid-template-columns:1fr auto;
+
+    align-items:center;
+
+    gap:30px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.join-box:before{
+    content:"✦";
+
+    position:absolute;
+
+    left:5%;
+    top:-42px;
+
+    font-size:180px;
+
+    color:rgba(255,255,255,.13);
+
+    transform:rotate(15deg);
+}
+
+.join-box h2{
+    position:relative;
+
+    margin:0 0 10px;
+
+    font-size:clamp(35px,4vw,54px);
+
+    line-height:1.1;
+
+    font-weight:900;
+}
+
+.join-box p{
+    position:relative;
+
+    margin:0;
+
+    color:#EEE9FF;
+
+    font-weight:600;
+
+    line-height:1.8;
+}
+
+.join-btn{
+    position:relative;
+
+    min-width:180px;
+
+    background:var(--yellow);
+
+    color:var(--black);
+
+    box-shadow:8px 8px 0 var(--black);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:35px 0 45px;
+
+    border-top:2px solid rgba(23,19,31,.14);
+}
+
+.footer{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    font-weight:700;
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu-button{
+    display:none;
+
+    width:47px;
+    height:47px;
+
+    border:var(--border);
+    border-radius:13px;
+
+    background:white;
+
+    box-shadow:4px 4px 0 var(--black);
+
+    font-size:21px;
+    font-weight:900;
+}
+
+.mobile-menu{
+    display:none;
+
+    padding:0 0 18px;
+
+    font-weight:800;
+}
+
+.mobile-menu.open{
+    display:grid;
+    gap:11px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:980px){
+
+    .navbar{
+        grid-template-columns:1fr auto;
+    }
+
+    .nav-links,
+    .nav-btn{
+        display:none;
+    }
+
+    .mobile-menu-button{
+        display:block;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:65px 0 80px;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        gap:60px;
+    }
+
+    .hero-copy{
+        text-align:center;
+    }
+
+    .hero-copy .eyebrow{
+        margin:auto;
+    }
+
+    .hero-description{
+        margin:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .trust{
+        justify-content:center;
+    }
+
+    .dashboard-area{
+        width:min(650px,100%);
+        margin:auto;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .steps{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .info-strip-inner{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .join-box{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .join-btn{
+        justify-self:center;
+    }
+
+}
+
+
+@media(max-width:620px){
+
+    .container{
+        width:calc(100% - 24px);
+    }
+
+    .brand-name{
+        font-size:20px;
+    }
+
+    .logo-box{
+        width:45px;
+        height:45px;
+    }
+
+    .hero{
+        padding-top:45px;
+    }
+
+    .hero h1{
+        font-size:clamp(45px,13vw,62px);
+        letter-spacing:-2px;
+    }
+
+    .hero-description{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-buttons .btn{
+        width:100%;
+    }
+
+    .trust{
+        flex-direction:column;
+    }
+
+    .dashboard{
+        transform:rotate(-1deg);
+        box-shadow:8px 8px 0 var(--black);
+    }
+
+    .dashboard-content{
+        padding:18px;
+    }
+
+    .dashboard-header{
+        align-items:flex-start;
+    }
+
+    .quick-cards{
+        grid-template-columns:1fr;
+    }
+
+    .quick-card{
+        min-height:68px;
+    }
+
+    .strip-items{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .strip-items span:last-child{
+        grid-column:1/-1;
+    }
+
+    .section{
+        padding:78px 0;
+    }
+
+    .section-header h2{
+        font-size:38px;
+    }
+
+    .steps{
+        grid-template-columns:1fr;
+    }
+
+    .join-box{
+        padding:36px 23px;
+
+        box-shadow:8px 8px 0 var(--black);
+    }
+
+    .triangle,
+    .dotted{
+        display:none;
+    }
+
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+        animation:none!important;
+        transition:none!important;
+    }
+
+}
+
+
+/* college hub: more than one card */
+.college-hub-grid.multi{display:grid;grid-template-columns:1fr;gap:28px}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar-wrap">
+
+<div class="container">
+
+<nav class="navbar">
+
+<a href="index.html" class="brand">
+
+<div class="logo-box">
+<img src="vortexa-logo.png" alt="Sanafur HU">
+</div>
+
+<span class="brand-name">SANAFUR HU</span>
+
+</a>
+
+
+<div class="nav-links">
+<a href="index.html#guide">الرئيسية</a>
+<a href="map.html">خريطة الجامعة</a>
+<a href="exams.html">امتحانات المستوى</a>
+<a href="gpa.html">حاسبة المعدل</a>
+<a href="team.html">الفريق</a>
+</div>
+<a href="map.html" class="btn nav-btn">افتح الخريطة</a>
+
+
+<button
+class="mobile-menu-button"
+id="menuButton"
+aria-label="القائمة">
+
+☰
+
+</button>
+
+</nav>
+
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html#guide">الرئيسية</a>
+<a href="map.html">خريطة الجامعة</a>
+<a href="exams.html">امتحانات المستوى</a>
+<a href="gpa.html">حاسبة المعدل</a>
+<a href="team.html">الفريق</a>
+</div>
+</div>
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<main id="home">
+
+<section class="hero">
+
+
+<!-- Purple Triangle -->
+
+<svg class="shape triangle"
+viewBox="0 0 100 100">
+
+<path
+d="M50 8 L92 88 L8 88 Z"
+fill="#8D6BFF"
+stroke="#17131F"
+stroke-width="6"/>
+
+</svg>
+
+
+
+<!-- Pink Plus -->
+
+<svg class="shape plus"
+viewBox="0 0 100 100">
+
+<path
+d="M36 8H64V36H92V64H64V92H36V64H8V36H36Z"
+fill="#F06BD7"
+stroke="#17131F"
+stroke-width="6"/>
+
+</svg>
+
+
+
+<!-- Zig Zag -->
+
+<svg class="shape zigzag"
+viewBox="0 0 140 70">
+
+<polyline
+points="4,54 30,18 56,54 83,18 110,54 136,18"
+fill="none"
+stroke="#17131F"
+stroke-width="17"
+stroke-linejoin="round"/>
+
+<polyline
+points="4,54 30,18 56,54 83,18 110,54 136,18"
+fill="none"
+stroke="#6D4AFF"
+stroke-width="10"
+stroke-linejoin="round"/>
+
+</svg>
+
+
+
+<!-- Yellow Arc -->
+
+<svg class="shape arc"
+viewBox="0 0 100 100">
+
+<path
+d="M10 90
+A80 80 0 0 1 90 10
+L66 34
+A46 46 0 0 0 34 66
+Z"
+
+fill="#FFD252"
+
+stroke="#17131F"
+stroke-width="6"/>
+
+</svg>
+
+
+
+<!-- Dot Circle -->
+
+<svg class="shape dotted"
+viewBox="0 0 100 100">
+
+<circle
+cx="50"
+cy="50"
+r="39"
+
+fill="#fff"
+
+stroke="#17131F"
+stroke-width="6"/>
+
+<g fill="#6D4AFF">
+
+<circle cx="30" cy="30" r="5"/>
+<circle cx="50" cy="28" r="5"/>
+<circle cx="70" cy="30" r="5"/>
+
+<circle cx="28" cy="50" r="5"/>
+<circle cx="50" cy="50" r="5"/>
+<circle cx="72" cy="50" r="5"/>
+
+<circle cx="30" cy="70" r="5"/>
+<circle cx="50" cy="72" r="5"/>
+<circle cx="70" cy="70" r="5"/>
+
+</g>
+
+</svg>
+
+
+
+<!-- Squiggle -->
+
+<svg class="shape squiggle"
+viewBox="0 0 160 90">
+
+<path
+d="
+M8 50
+C25 6 40 94 58 50
+C76 6 90 94 108 50
+C126 8 140 92 153 48
+"
+
+fill="none"
+
+stroke="#17131F"
+
+stroke-width="10"
+
+stroke-linecap="round"/>
+
+</svg>
+
+
+
+<!-- Half Circle -->
+
+<svg class="shape half"
+viewBox="0 0 100 100">
+
+<path
+d="M10 52 A40 40 0 0 1 90 52 Z"
+
+fill="#CEC2FF"
+
+stroke="#17131F"
+
+stroke-width="6"/>
+
+</svg>
+
+
+<div class="mini-circle"></div>
+
+
+
+<div class="container hero-grid">
+
+
+<!-- HERO COPY -->
+
+<div class="hero-copy">
+
+
+<div class="eyebrow">
+
+<span class="dot"></span>
+
+دفعة 2026 • الجامعة الهاشمية
+
+</div>
+
+
+<h1>
+
+أول فصل؟<br>
+
+خليه
+<span class="marker">أوضح</span>،
+<br>
+
+وأقل
+<span class="marker purple">ضياع.</span>
+
+</h1>
+
+
+<p class="hero-description">
+
+Sanafur HU مساحة طلابية مخصصة للطلبة المستجدين
+في الجامعة الهاشمية.
+
+بنرتّبلك أهم الأشياء من أول يوم،
+وبنساعدك تعرف الجامعة أسرع،
+وتبدأ حياتك الجامعية وأنت فاهم شو عليك.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a href="#guide"
+class="btn primary-btn">
+
+افتح خريطة الجامعة ←
+
+</a>
+
+
+<a href="#first-week"
+class="btn secondary-btn">
+
+امتحانات المستوى
+
+</a>
+
+</div>
+
+
+
+<div class="trust">
+
+
+<div class="avatars">
+
+<div class="avatar">V</div>
+
+<div class="avatar">HU</div>
+
+<div class="avatar">26</div>
+
+<div class="avatar">+</div>
+
+</div>
+
+
+<div class="trust-text">
+
+مكان واحد لبداية أهدى وأوضح
+
+<br>
+
+<span>
+دليل • مجتمع • فعاليات • حياة جامعية
+</span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================
+     DASHBOARD
+========================= -->
+
+<div class="dashboard-area">
+
+
+<div class="dashboard">
+
+
+<div class="browser-bar">
+
+<div class="browser-dots">
+
+<span class="browser-dot"></span>
+
+<span class="browser-dot"></span>
+
+<span class="browser-dot"></span>
+
+</div>
+
+
+<div class="browser-title">
+
+لوحة الطالب المستجد • Sanafur HU
+
+</div>
+
+</div>
+
+
+
+<div class="dashboard-content">
+
+
+<div class="dashboard-header">
+
+<h3>
+جاهز لأول أسبوع؟
+</h3>
+
+
+<span class="ready-pill">
+76% جاهزية
+</span>
+
+</div>
+
+
+
+<div class="progress-card">
+
+<div class="progress-head">
+
+<span>
+خطوات البداية
+</span>
+
+<span>
+5 من 7
+</span>
+
+</div>
+
+
+<div class="progress">
+
+<span></span>
+
+</div>
+
+</div>
+
+
+
+<div class="quick-cards">
+
+
+<div class="quick-card" data-href="map.html" role="link" tabindex="0" style="cursor:pointer">
+
+<strong>01</strong>
+
+<span>
+دليل القاعات
+</span>
+
+</div>
+
+
+<div class="quick-card" data-href="gpa.html" role="link" tabindex="0" style="cursor:pointer">
+
+<strong>02</strong>
+
+<span>
+حاسبة المعدل
+</span>
+
+</div>
+
+
+<div class="quick-card" data-href="https://chat.whatsapp.com/ERc9AM3qSQg6xhWxpwpAYt" role="link" tabindex="0" style="cursor:pointer">
+
+<strong>03</strong>
+
+<span>
+مجتمع الدفعة
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<div class="check-list">
+
+
+<div class="check-item">
+
+<span class="checkbox checked"></span>
+
+تفعيل البريد الجامعي
+
+</div>
+
+
+<div class="check-item">
+
+<span class="checkbox checked"></span>
+
+حفظ أهم مباني الجامعة
+
+</div>
+
+
+<div class="check-item">
+
+<span class="checkbox"></span>
+
+ترتيب جدول أول أسبوع
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<div class="college-quick-actions" id="collegeQuickActions" hidden aria-label="روابط الكلية السريعة">
+    <a class="college-quick-action" href="#collegeHub" data-label="مبادرات كليتك" aria-label="اذهب إلى مبادرات كليتك"><i class="fa-solid fa-handshake" aria-hidden="true"></i></a>
+    <a class="college-quick-action whatsapp-action" href="https://chat.whatsapp.com/ERc9AM3qSQg6xhWxpwpAYt" target="_blank" rel="noreferrer" data-label="مجتمع واتساب" aria-label="افتح مجتمع واتساب"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+</div>
+
+<!-- =========================
+     BLACK SOCIAL PROOF STRIP
+========================= -->
+
+<section class="info-strip">
+
+<div class="container info-strip-inner">
+
+
+<div class="strip-title">
+
+كل ما تحتاجه ببداية الجامعة
+
+</div>
+
+
+<div class="strip-items">
+
+
+<span>خريطة الجامعة</span>
+
+<span>امتحانات المستوى</span>
+
+<span>الخدمات</span>
+
+<span>الفعاليات</span>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="section"
+id="guide">
+
+
+<div class="container">
+
+
+<div class="section-header">
+
+
+<div class="eyebrow">
+
+<span class="dot"></span>
+
+اختصارات SANAFUR HU
+
+</div>
+
+
+<h2>
+
+الجامعة كبيرة.<br>
+
+البداية ما لازم تكون معقّدة.
+
+</h2>
+
+
+<p>
+
+بدل ما تجمع المعلومة من عشر أماكن،
+Sanafur HU يرتّبلك أهم الأشياء اللي فعلاً بتهمك
+كطالب مستجد.
+
+</p>
+
+
+</div>
+
+
+
+<div class="features">
+
+
+<article class="feature">
+
+
+<div class="icon">
+✓
+</div>
+
+
+<h3>
+امتحانات المستوى
+</h3>
+
+
+<p>
+
+خطوات واضحة من أول يوم:
+الحسابات، الخدمات، الأماكن المهمة،
+وكيف ترتّب أمورك بدون تخبيص.
+
+</p>
+
+
+<div class="corner-circle"></div>
+
+
+</article>
+
+
+
+<article class="feature">
+
+
+<div class="icon">
+⌖
+</div>
+
+
+<h3>
+لا تضيع بين المباني
+</h3>
+
+
+<p>
+
+دليل بسيط لأهم الأماكن التي يحتاجها
+الطالب المستجد داخل الجامعة،
+حتى توصل أسرع وتوفر وقتك.
+
+</p>
+
+
+<div class="corner-circle"></div>
+
+
+</article>
+
+
+
+<article class="feature"
+id="community">
+
+
+<div class="icon">
+✦
+</div>
+
+
+<h3>
+تعرّف على الفريق
+</h3>
+
+
+<p>
+
+تعرف على طلبة مثلك،
+شارك الأسئلة،
+تابع الأنشطة والفعاليات،
+وخلي أول فصل أخف وأمتع.
+
+</p>
+
+
+<div class="corner-circle"></div>
+
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FIRST WEEK
+========================= -->
+
+<section
+class="section"
+id="first-week"
+style="padding-top:30px;">
+
+
+<div class="container">
+
+
+<div class="section-header">
+
+
+<div class="eyebrow">
+
+<span class="dot"></span>
+
+أول أسبوع
+
+</div>
+
+
+<h2>
+
+4 خطوات تختصر عليك<br>
+
+بداية الفصل.
+
+</h2>
+
+
+<p>
+
+مش قائمة طويلة تنساها.
+هاي الأشياء الأساسية اللي بدك تخلصها
+عشان تبدأ براحة.
+
+</p>
+
+
+</div>
+
+
+
+<div class="steps">
+
+
+<div class="step">
+
+
+<div class="step-number">
+01
+</div>
+
+
+<h3>
+ثبّت حساباتك
+</h3>
+
+
+<p>
+
+تأكد من البريد الجامعي،
+بوابة الطالب،
+وكلمات المرور قبل ما تحتاجهم فجأة.
+
+</p>
+
+
+</div>
+
+
+
+<div class="step">
+
+
+<div class="step-number">
+02
+</div>
+
+
+<h3>
+احفظ أهم الأماكن
+</h3>
+
+
+<p>
+
+اعرف موقع كليتك،
+القبول والتسجيل،
+المكتبة،
+الخدمات والمواصلات.
+
+</p>
+
+
+</div>
+
+
+
+<div class="step">
+
+
+<div class="step-number">
+03
+</div>
+
+
+<h3>
+رتّب جدولك
+</h3>
+
+
+<p>
+
+اعرف القاعات مسبقاً،
+وصور جدولك،
+وانتبه للمسافة بين المحاضرات.
+
+</p>
+
+
+</div>
+
+
+
+<div class="step">
+
+
+<div class="step-number">
+04
+</div>
+
+
+<h3>
+ادخل المجتمع
+</h3>
+
+
+<p>
+
+أي سؤال عندك غالباً في طالب ثاني
+سأله قبلك.
+خليك قريب من مجتمع دفعتك.
+
+</p>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     FINAL CTA
+========================= -->
+
+<section
+class="section"
+id="join">
+
+
+<div class="container">
+
+
+<div class="join-box">
+
+
+<div>
+
+
+<h2>
+
+خلّي أول فصل أقوى<br>
+مع Sanafur HU.
+
+</h2>
+
+
+<p>
+
+تابع الفريق،
+خذ دليل المستجد،
+وكون جزء من مجتمع الطلبة
+في الجامعة الهاشمية.
+
+</p>
+
+
+</div>
+
+
+
+<a
+href="https://chat.whatsapp.com/ERc9AM3qSQg6xhWxpwpAYt"
+class="btn join-btn"
+id="joinButton">
+
+انضم الآن
+
+</a>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<section class="college-hub" id="collegeHub" hidden>
+<div class="container" id="collegeHubContent"></div>
+</section>
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+
+<div class="container footer">
+
+
+<span>
+© 2026 Sanafur HU — تنفيذ Ai School بالتعاون مع Vortexa وبشراكة استراتيجية مع مبادرات الجامعة الهاشمية
+</span>
+
+
+<span>
+Built for Hashemite University freshmen.
+</span>
+
+
+</div>
+
+
+</footer>
+
+
+
+<script>
+
+/* =========================
+   JOIN BUTTON
+   ضع رابط الواتساب أو التسجيل هنا
+========================= */
+
+const JOIN_LINK =
+"https://chat.whatsapp.com/ERc9AM3qSQg6xhWxpwpAYt";
+
+
+document
+.getElementById("joinButton")
+.addEventListener("click",(event)=>{
+
+    event.preventDefault();
+
+    window.open(
+        JOIN_LINK,
+        "_blank"
+    );
+
+});
+
+
+/* =========================
+   HOMEPAGE SHORTCUTS
+========================= */
+
+const shortcutTargets = [
+    "exams.html",
+    "map.html",
+    "team.html"
+];
+
+document.querySelectorAll(".feature")
+.forEach((card,index)=>{
+
+    card.setAttribute("role","link");
+    card.setAttribute("tabindex","0");
+    card.style.cursor="pointer";
+
+    const openTarget = () => {
+        window.location.href = shortcutTargets[index];
+    };
+
+    card.addEventListener("click",openTarget);
+
+    card.addEventListener("keydown",(event)=>{
+        if(event.key === "Enter" || event.key === " "){
+            event.preventDefault();
+            openTarget();
+        }
+    });
+
+});
+
+document.querySelectorAll(".quick-card[data-href]").forEach((card)=>{
+    const openTarget=()=>window.location.href=card.dataset.href;
+    card.addEventListener("click",openTarget);
+    card.addEventListener("keydown",(event)=>{
+        if(event.key==="Enter" || event.key===" "){
+            event.preventDefault();
+            openTarget();
+        }
+    });
+});
+
+</script>
+
+<div class="onboarding-overlay" id="vortexaOnboarding">
+    <div class="onboarding-card" role="dialog" aria-modal="true" aria-labelledby="onboardingTitle">
+        <div class="onboarding-step onboarding-welcome-step">
+            <div class="onboarding-logo small"><img src="assets/aischool-logo.png" alt="Ai School"></div>
+            <span class="onboarding-kicker">Sanafur HU</span>
+            <h2 id="onboardingTitle">أهلًا بك في مستقبلك.</h2>
+            <p>تم تنفيذ هذا الموقع بواسطة منصة <strong>Ai School</strong>، بالتعاون مع فريق <strong>Vortexa</strong>، وبشراكة استراتيجية مع مبادرات الجامعة الهاشمية.</p>
+            <p class="onboarding-note">Ai School هي أول منصة تعلمك كيف تستغل الذكاء الاصطناعي بدون خبرة، وتحول أفكارك إلى مهارات وفرص حقيقية تساعدك على بناء دخل.</p>
+            <div class="onboarding-socials" aria-label="منصات التواصل الاجتماعي">
+                <a href="https://www.instagram.com/ai.school_/" target="_blank" rel="noreferrer" aria-label="Instagram"><span><i class="fa-brands fa-instagram" aria-hidden="true"></i></span><small>Instagram</small></a>
+                <a href="https://www.facebook.com/profile.php?id=61594153163505" target="_blank" rel="noreferrer" aria-label="Facebook"><span><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></span><small>Facebook</small></a>
+              
+            </div>
+            <button class="btn onboarding-button" id="onboardingChooseCollege" type="button">اختَر كليتك وابدأ</button>
+        </div>
+        <div class="onboarding-step onboarding-college-step" hidden>
+            <div class="onboarding-logo"><img src="assets/aischool-logo.png" alt="Ai School"></div>
+            <span class="onboarding-kicker">أهلًا فيك في Sanafur HU</span>
+            <h2>خلّينا نجهز تجربتك.</h2>
+            <p>اختَر كليتك حتى نعرض لك المحتوى والخدمات الأقرب لاحتياجك كطالب في الجامعة الهاشمية.</p>
+            <label class="onboarding-label" for="onboardingCollege">كليتك</label>
+            <select class="onboarding-select" id="onboardingCollege">
+                <option value="">اختَر كليتك</option>
+                <option>كلية الهندسة</option><option>كلية تكنولوجيا المعلومات</option><option>كلية العلوم</option>
+                <option>كلية الطب</option><option>كلية الصيدلة</option><option>كلية التمريض</option><option>كلية العلوم الطبية التطبيقية</option>
+                <option>كلية الاقتصاد والعلوم الإدارية</option><option>كلية الآداب</option><option>كلية العلوم التربوية</option>
+                <option>كلية التربية البدنية وعلوم الرياضة</option><option>كلية الموارد الطبيعية والبيئية</option>
+                <option>كلية الملكة رانيا للطفولة</option><option>كلية الملكة رانيا للسياحة والتراث</option><option>كلية الدراسات العليا</option><option>كلية أخرى</option>
+            </select>
+            <p class="onboarding-error" id="onboardingError" aria-live="polite"></p>
+            <button class="btn onboarding-button" id="onboardingContinue" type="button">كمّل إلى Sanafur HU</button>
+        </div>
+    </div>
+</div>
+
+<script>
+(()=>{
+    const overlay=document.getElementById("vortexaOnboarding");
+    const welcomeStep=overlay.querySelector(".onboarding-welcome-step");
+    const collegeStep=overlay.querySelector(".onboarding-college-step");
+    const college=overlay.querySelector("#onboardingCollege");
+    const error=overlay.querySelector("#onboardingError");
+    const collegeHub=document.getElementById("collegeHub");
+    const collegeHubContent=document.getElementById("collegeHubContent");
+
+    /*
+     * إعدادات المبادرات الطلابية الشريكة
+     * ------------------------------------
+     * - INITIATIVES: بيانات كل مبادرة (الاسم، الوصف، الشعار، المصادر، الروابط).
+     * - COLLEGE_INITIATIVES: ربط كل كلية بمبادرتها. القيمة null = لا توجد مبادرة شريكة لهذه الكلية،
+     *   فتظهر رسالة بذلك مع روابط Vortexa.
+     * - أي رابط فارغ "" أو محذوف لا تظهر له أيقونة (لا موقع / لا تواصل = لا أيقونة).
+     * - قائمة النشامى (nashama) مبادرة على مستوى الجامعة وتظهر مع كل كلية.
+     */
+    const INITIATIVES={
+        vortexa:{
+            name:"Vortexa",
+            description:"فريق تقني طلابي انطلق عام 2025 ويحوّل الأفكار إلى مشاريع رقمية تخدم الطلبة: ذكاء اصطناعي، تطوير برمجيات، أدوات ومصادر وفرص. تحت شعار «من الفكرة إلى الواقع».",
+            logo:"assets/initiatives/vortexa.png",
+            materials:{label:"مصادر Vortexa",url:"https://vortex-a.com/resources.html"},
+            links:{
+                instagram:"https://www.instagram.com/vorteam2025/",
+                facebook:"https://www.facebook.com/profile.php?id=61583873862492",
+                whatsapp:"https://chat.whatsapp.com/JDConZ7nUlZ0f3GRsJbkpE",
+                website:"https://www.vortex-a.com/"
+            }
+        },
+        delta:{
+            name:"فريق دلتا الهندسي",
+            description:"بوابتك نحو الإبداع في الجامعة الهاشمية. مبادرة طلابية تطوعية تابعة لعمادة شؤون الطلبة، تجمع لك بين التفوق الأكاديمي والمشاريع الهندسية التطبيقية والفعاليات التفاعلية؛ لنكون رفقاء دربك في بناء شخصيتك الهندسية وصناعة أثرك الخاص من يومك الأول.",
+            logo:"assets/initiatives/delta.png",
+            materials:{label:"مصادر مواد كلية الهندسة",url:"https://drive.google.com/drive/folders/12-9AXTO-GcE8m9U480oC8XrdU17yBbyD?usp=drive_link"},
+            links:{
+                instagram:"https://www.instagram.com/delta_team_hu",
+                facebook:"https://www.facebook.com/share/1UAJdT5qG8/"
+            }
+        },
+        nursing:{
+            name:"نشامى التمريض",
+            description:"فريق طلابي في كلية التمريض، أحد الفرق المنبثقة ضمن قائمة النشامى. وُجد لتنمية مهارات طلبة التمريض من خلال ورش تدريبية ودورات عملية ومبادرات تخدم الطلبة والمجتمع، وداعم لكل طالب يطمح للتطور والتميز. (قول . فعل . أثر)",
+            logo:"assets/initiatives/nashama-nursing.png",
+            materials:{label:"مصادر مواد كلية التمريض",url:"https://drive.google.com/drive/folders/1xgxvo9ji8MeDBor38xUSyDP1D_b4u8si"},
+            links:{
+                instagram:"https://www.instagram.com/alnashama_nursing",
+                facebook:"https://www.facebook.com/share/18AaC9NJB1/",
+                whatsapp:"https://chat.whatsapp.com/GM03DK5tSOF8cUVkQze7au"
+            }
+        },
+        artea:{
+            name:"Artea — المبادرة الفنية",
+            description:"المبادرة الفنية الأولى والوحيدة في الجامعة الهاشمية، تتبع عمادة شؤون الطلبة (النادي الثقافي والفني) وتمثّل قسم التربية الفنية في كلية العلوم التربوية. تنظّم الأنشطة والفعاليات الفنية والثقافية داخل الحرم الجامعي وتوفّر مساحة إبداعية يعبّر فيها الطلبة عن مواهبهم.",
+            logo:"assets/initiatives/artea.png",
+            materials:{label:"مصادر مواد كلية العلوم التربوية",url:"https://drive.google.com/drive/folders/1bb8FZzU5907WeeJpbSHR-KnxygpiQQAk"},
+            links:{
+                instagram:"https://www.instagram.com/artea_team_hu"
+            }
+        },
+        nashama:{
+            name:"قائمة النشامى",
+            description:"مبادرة طلابية تطوعية تابعة لعمادة شؤون الطلبة، نتخذ من الخدمة رسالة ومن العطاء سنّة. غايتنا خدمة الطالب، وجوهرنا عمل رصين يلتقي فيه الإتقان بالرؤية والمبادرة بالإخلاص. (قول . فعل . أثر)",
+            logo:"assets/initiatives/nashama.png",
+            materials:{label:"مصادر قائمة النشامى",url:"https://drive.google.com/drive/folders/1QlVZl2QoFfyqJ_KiilnXnonIZ1Bocd7M?usp=sharing"},
+            links:{
+                instagram:"https://www.instagram.com/alnashama_hu",
+                facebook:"https://www.facebook.com/share/18xTqnZ6E1/"
+            }
+        }
+    };
+
+    /* كل كليات الجامعة الهاشمية — null = لا توجد مبادرة شريكة بعد */
+    const COLLEGE_INITIATIVES={
+        "كلية الهندسة":"delta",
+        "كلية تكنولوجيا المعلومات":"vortexa",
+        "كلية التمريض":"nursing",
+        "كلية العلوم التربوية":"artea",
+        "كلية العلوم":null,
+        "كلية الطب":null,
+        "كلية الصيدلة":null,
+        "كلية العلوم الطبية التطبيقية":null,
+        "كلية الاقتصاد والعلوم الإدارية":null,
+        "كلية الآداب":null,
+        "كلية التربية البدنية وعلوم الرياضة":null,
+        "كلية الموارد الطبيعية والبيئية":null,
+        "كلية الملكة رانيا للطفولة":null,
+        "كلية الملكة رانيا للسياحة والتراث":null,
+        "كلية الدراسات العليا":null,
+        "كلية أخرى":null
+    };
+
+    const linkMeta={
+        instagram:{label:"إنستغرام",icon:"fa-brands fa-instagram"},
+        facebook:{label:"فيسبوك",icon:"fa-brands fa-facebook-f"},
+        whatsapp:{label:"واتساب",icon:"fa-brands fa-whatsapp"},
+        website:{label:"الموقع الإلكتروني",icon:"fa-solid fa-arrow-up-right-from-square"}
+    };
+
+    /* أيقونة تظهر فقط إذا كان الرابط موجودًا */
+    const renderInitiativeLinks=(links={})=>Object.entries(linkMeta)
+        .filter(([key])=>links[key])
+        .map(([key,meta])=>`<a href="${links[key]}" target="_blank" rel="noreferrer" aria-label="${meta.label}" title="${meta.label}"><i class="${meta.icon}" aria-hidden="true"></i></a>`)
+        .join("");
+
+    const renderInitiativeCard=(initiative,badge)=>{
+        const materials=initiative.materials&&initiative.materials.url
+            ? `<a class="initiative-materials" href="${initiative.materials.url}" target="_blank" rel="noreferrer"><span class="materials-spark">✦</span><span><small>مصدر هذه المبادرة</small>${initiative.materials.label||"افتح مصادر المواد"}</span><b>←</b></a>`
+            : "";
+        const socials=renderInitiativeLinks(initiative.links);
+        return `<article class="college-initiative-card featured"><div class="initiative-logo"><img src="${initiative.logo}" alt="شعار ${initiative.name}"></div><div class="initiative-copy"><span>${badge}</span><h3>${initiative.name}</h3><p>${initiative.description}</p>${materials}${socials?`<div class="initiative-socials">${socials}</div>`:""}</div></article>`;
+    };
+
+    const renderCollegeHub=(collegeName)=>{
+        const own=INITIATIVES[COLLEGE_INITIATIVES[collegeName]];
+        const head=own
+            ? `<span class="college-hub-kicker">مساحتك الشخصية</span><h2>مبادرة طلابية في <em>${collegeName}</em></h2><p>المبادرة، مصدر موادها وروابط التواصل الخاصة بها في مكان واحد.</p>`
+            : `<span class="college-hub-kicker">مساحتك الشخصية</span><h2>لا توجد مبادرة شريكة في <em>${collegeName}</em> حاليًا</h2><p>لم تنضم مبادرة طلابية من كليتك بعد. في هذه الأثناء تابع Vortexa لمعرفة أخبار الجامعة وكل جديد يهم الطلبة.</p>`;
+        const cards=[
+            own?renderInitiativeCard(own,"مبادرة كليتك"):renderInitiativeCard(INITIATIVES.vortexa,"تابع Vortexa"),
+            renderInitiativeCard(INITIATIVES.nashama,"على مستوى الجامعة")
+        ];
+        collegeHubContent.innerHTML=`
+            <div class="college-hub-head"><div>${head}</div></div>
+            <div class="college-hub-grid multi">${cards.join("")}</div>`;
+        collegeHub.hidden=false;
+        document.getElementById("collegeQuickActions").hidden=false;
+    };
+    overlay.querySelector("#onboardingChooseCollege").addEventListener("click",()=>{
+        welcomeStep.hidden=true;
+        collegeStep.hidden=false;
+        college.focus();
+    });
+    overlay.querySelector("#onboardingContinue").addEventListener("click",()=>{
+        if(!college.value){
+            error.textContent="اختَر كليتك أولًا حتى نكمل.";
+            college.focus();
+            return;
+        }
+        renderCollegeHub(college.value);
+        overlay.remove();
+    });
+})();
+</script>
+
+<script src="script.js?v=20260925-1"></script>
+
+
+</body>
+</html>
